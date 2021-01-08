@@ -1,7 +1,7 @@
-import { CAMPSITES } from '../shared/campsites';
-import { COMMENTS } from '../shared/comments';
-import { PARTNERS } from '../shared/partners';
-import { PROMOTIONS } from '../shared/promotions';
+import { CAMPSITES } from '../components/shared/campsites';
+import { COMMENTS } from '../components/shared/comments';
+import { PARTNERS } from '../components/shared/partners';
+import { PROMOTIONS } from '../components/shared/promotions';
 
 
 export const initialState = {
