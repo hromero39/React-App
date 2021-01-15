@@ -22,7 +22,7 @@ const minLength = len => val => val && (val.length >= len); 
         );
     }
 
- function RenderComments({comments, addComment, campsiteId}){
+ function RenderComments({comments, postComment, campsiteId}){
         if(comments){
             return(
                 <div className="md-5 m-1">
@@ -37,7 +37,7 @@ const minLength = len => val => val && (val.length >= len); 
                             </div>
                         );
                     })}
-                    <CommentForm campsiteId={campsiteId} addComment={addComment} />
+                    <CommentForm campsiteId={campsiteId} postComment={postComment} />
                 </div>
             );
         }
@@ -62,7 +62,7 @@ class CommentForm extends Component{
     
     handleSubmit(values) {
         this.toggleModal();
-        this.props.addComment(this.props.campsiteId, values.rating, values.author, values.text);
+        this.props.postComment(this.props.campsiteId, values.rating, values.author, values.text);
     }
 
     render(){
@@ -155,7 +155,7 @@ function CampsiteInfo(props){
                         <RenderCampsite campsite={props.campsite} />
                         <RenderComments 
                             comments={props.comments} 
-                            addComment={props.addComment}
+                            postComment={props.postComment}
                             campsiteId={props.campsite.id}
                         />
                     </div>
